@@ -70,7 +70,7 @@ returns a fixed string.
 
 ### The webextension
 
-The webextension in the [`extension/`](extension] director)
+The webextension in the [`extension/`](extension) directory
 is quite simple.
 One thing to note is that [`manifest.json`](extension/manifest.json)
 includes the permission `"experiments.simple"`.
