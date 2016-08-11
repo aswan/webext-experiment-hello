@@ -1,0 +1,15 @@
+[
+  {
+    "namespace": "hello",
+    "description": "Hello world",
+    "permissions": [],
+    "functions": [
+      {
+        "name": "hello",
+        "type": "function",
+        "description": "Returns the string \"Hello, world\"",
+        "parameters": []
+      }
+    ]
+  }
+]

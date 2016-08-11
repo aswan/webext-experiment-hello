@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "hello test",
+  "description": "test the simple experiment",
+  "version": "1.0",
+
+  "background": { "scripts": ["background.js"] },
+
+  "permissions": [ "experiments.simple" ]
+}
