@@ -4,7 +4,7 @@ This project contains a trivial example of a webextension experiment.
 
 ## Using an experimental API in 4 simple steps
 
-1. Run a Firefox 51 build and navigate to [[about:debugging]]
+1. Run a Firefox 51 build and navigate to [about:debugging][]
 2. Choose "Load Temporary Add-on" and select (a file from) the
    `experiment/` directory in this project.  You should see
    a new entry in the list of extensions titled "Experimental API".
@@ -20,9 +20,10 @@ This project contains a trivial example of a webextension experiment.
 
 ### The API extension
 
-The extension in the `experiment/` directory is a new type of Firefox
-extension called an api extension.  This is specified by the `type`
-property in the extension's install.rdf:
+The extension in the [`experiment/`][tree/master/experiment]
+directory is a new type of Firefox extension called an api extension.
+This is specified by the `type` property in
+[the extension's install.rdf][tree/master/experiment/install.rdf]:
 
 ```
     em:type="256"
@@ -39,18 +40,20 @@ In this case, we are using the name "simple":
 ```
 
 To use this API, a webextension will need to declare that is requires
-the "experiments.simple" permission -- more on that below.
+the `"experiments.simple"` permission -- more on that below.
 
 An API extension must contain two files: `schema.json` and `api.js`.
-The file `schema.json` is a standard JSON schema for the new
-webextension API implemented in the extension.  When the API extension
-is loaded, the schema is loaded and processed just like the
-schema files built into the base browser.  In this case, we have
-a simple schema
-that creates a new namespace called `hello`,
-which contains a single function `hello()`.
+The file [`schema.json`][tree/master/experiment/schema.json]
+is a standard JSON schema for the new
+webextension API implemented in the extension.
+When the API extension is loaded, the schema is loaded and processed
+just like
+[the schema files built into the base browser][https://dxr.mozilla.org/mozilla-central/source/toolkit/components/extensions/schemas].
+In this case, we have a simple schema that creates
+a new namespace called `hello`, which contains a single function `hello()`.
 
-The file `api.js` contains the actual implementation of this API.
+The file [`api.js`][tree/master/experiment/api.js]
+contains the actual implementation of this API.
 This file is evaluated with Chrome privileges, and after it is evaluated,
 it should create a new class called `API`.  A new instance of this
 class will be created every time an extension that uses this API
@@ -67,11 +70,12 @@ returns a fixed string.
 
 ### The webextension
 
-The webextension in the `extension/` directory is quite simple.
-One thing to note is that `manifest.json` includes the permission
-`"experiments.simple"`.  As described above this creates a dependency
-between this webextension and an API extension with an ID of the
-form `"simple@(something)"`.
+The webextension in the [`extension/`][tree/master/extension] directory
+is quite simple.
+One thing to note is that [`manifest.json`][tree/master/extension/manifest.json]
+includes the permission `"experiments.simple"`.
+As described above this creates a dependency between this webextension
+and an API extension with an ID of the form `"simple@(something)"`.
 
 The add-ons manager currently enforces this dependency in that it will
 not enable a webextension if it depends on an API extension that is
