@@ -8,6 +8,7 @@
         "name": "hello",
         "type": "function",
         "description": "Returns the string \"Hello, world\"",
+        "async": true,
         "parameters": []
       }
     ]

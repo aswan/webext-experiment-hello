@@ -1,12 +1,11 @@
-
 class API extends ExtensionAPI {
   getAPI(context) {
     return {
       hello: {
-        hello() {
+        async hello() {
           return "Hello, world!";
-        },
-      },
+        }
+      }
     };
   }
 }

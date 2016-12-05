@@ -1,2 +1,3 @@
-
-console.log(`hello sez: "${browser.hello.hello()}"`);
+browser.hello.hello().then(
+  message => console.log(`hello sez: "${message}"`)
+);
