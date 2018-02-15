@@ -1,4 +1,5 @@
-class API extends ExtensionAPI {
+
+this.hello = class extends ExtensionAPI {
   getAPI(context) {
     return {
       hello: {

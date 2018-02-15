@@ -1,10 +1,23 @@
 {
   "manifest_version": 2,
   "name": "hello test",
-  "description": "test the simple experiment",
+  "description": "Test an embedded webextension API.",
   "version": "1.0",
 
-  "background": { "scripts": ["background.js"] },
+  "applications": {
+    "gecko": { "id": "embedded-test@mozilla.org" }
+  },
 
-  "permissions": [ "experiments.simple" ]
+  "experiment_apis": {
+    "hello": {
+      "schema": "schema.json",
+      "parent": {
+        "scopes": ["addon_parent"],
+        "script": "hello.js",
+        "paths": [["hello"]]
+      }
+    }
+  },
+
+  "background": { "scripts": ["background.js"] }
 }

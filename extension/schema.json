@@ -2,7 +2,6 @@
   {
     "namespace": "hello",
     "description": "Hello world",
-    "permissions": ["experiments.simple"],
     "functions": [
       {
         "name": "hello",
