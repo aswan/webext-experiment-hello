@@ -1,3 +1,7 @@
+# THIS REPOSITORY IS OBSOLETE
+
+See [firefox source docs](http://firefox-source-docs.mozilla.org/toolkit/components/extensions/webextensions/index.html) for up to date information on WebExtensions experiments.
+
 ## Sample webextension experiment
 
 This project contains a trivial example of a webextension experiment.
